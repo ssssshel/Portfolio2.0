@@ -1,12 +1,16 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import HeadLayout from '../components/HeadLayout'
+import Footer from '../components/Footer'
 
-const Home: NextPage = () => {
+const Home = () => {
   return (
-    <div>
+    <div className='w-full bg-slate-500' >
+      <HeadLayout title="Index" description='Portafolio Desarrollador Angel Arteaga | Portfolio Angel Arteaga Developer' />
+      <div >
+        <div className=' w-full h-screen'>
 
+        </div>
+      </div>
     </div>
   )
 }
