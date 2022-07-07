@@ -3,6 +3,7 @@ import HeadLayout from '../components/HeadLayout'
 import Navbar from '../components/Navbar'
 import Navbar2 from '../components/Navbar2x'
 import Footer from '../components/Footer'
+import Image from 'next/image'
 
 const Home = () => {
   return (
@@ -71,10 +72,41 @@ const Home = () => {
       {/* SKILLS */}
       <div className='bg-light p-20 h-auto'>
         <h2 className='font-Fira-Code text-5xl text-dark'>Habilidades</h2>
-        <div>
-          <h3>Desarrollo Web Frontend</h3>
-          <div>
+        <div className='flex flex-col gap-10'>
 
+
+          <div>
+            <h3 className='font-Fira-Code text-3xl text-dark'>Desarrollo Web Frontend</h3>
+            <div className='flex '>
+              <div>
+                <Image alt='' src={'/public/img/html.png'} width={50} height={50} />
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3>Desarrollo Web Backend</h3>
+            <div>
+
+            </div>
+          </div>
+          <div>
+            <h3>Desarrollo Mobile</h3>
+            <div>
+
+            </div>
+          </div>
+          <div>
+            <h3>Desarrollo Web Frontend</h3>
+            <div>
+
+            </div>
+          </div>
+          <div>
+            <h3>Desarrollo Web Frontend</h3>
+            <div>
+
+            </div>
           </div>
         </div>
       </div>
