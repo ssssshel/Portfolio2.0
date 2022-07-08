@@ -7,9 +7,11 @@ import SkillItem from '../components/SkillItem'
 import skills from '../data/skills'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import ProjectItem from '../components/ProjectItem'
+import { projectsList } from '../data/projects'
+import ProjectPopup from '../components/ProjectPopup'
 
 
 const Home = () => {
@@ -21,21 +23,29 @@ const Home = () => {
 
 
   const { backend, database, frontend, mobile, testing, tools } = skills()
+  const { project } = projectsList()
+
+  const [showPopup, setShowPopup] = useState(false)
+  const [selectedItem, setSelectedItem] = useState(null)
+
+  const handleShowPopup = () => {
+    setShowPopup(true)
+  }
 
   return (
     <div className='bg-white' >
       <HeadLayout title="Index" description='Portafolio Desarrollador Angel Arteaga | Portfolio Angel Arteaga Developer' />
       {/* HEADER */}
-      <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col justify-between w-full h-screen bg-medium '>
+      <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col justify-between w-full h-screen bg-dark '>
         <Navbar />
 
         <div data-aos="fade-up" className='flex flex-col items-center justify-center w-full pl-20 pr-20 '>
-          <h1 className='text-6xl font-medium font-Fira-Code text-dark drop-shadow-md'>{'<ANGEL id="ARTEAGA"'}</h1>
-          <h2 className='text-3xl font-Fira-Code text-dark drop-shadow-md'>{'type="Full-Stack Developer"/>'}</h2>
+          <h1 className='text-6xl font-medium font-Fira-Code text-light drop-shadow-md'>{'<ANGEL id="ARTEAGA"'}</h1>
+          <h2 className='text-3xl font-Fira-Code text-medium drop-shadow-md'>{'type="Full-Stack Developer"/>'}</h2>
         </div>
 
-        <div className='flex items-center justify-center w-full h-20 font-medium bg-dark'>
-          <p className='text-lg font-normal font-Fira-Code text-light'>{'onClick={() => DescubreMás()}'}</p>
+        <div className='flex items-center justify-center w-full h-20 font-medium bg-medium'>
+          <p className='text-lg font-normal font-Fira-Code text-dark'>{'onClick={() => DescubreMás()}'}</p>
         </div>
       </div>
       {/* ABOUT */}
@@ -86,12 +96,13 @@ const Home = () => {
         </div>
       </div>
       {/* SKILLS */}
-      <div className='flex flex-col h-auto gap-16 px-20 py-32 bg-light'>
-        <h2 data-aos="fade-right" data-aos-duration="700" className='text-5xl font-Fira-Code text-dark drop-shadow-lg'>{'{Habilidades}'}</h2>
-        <div className='flex flex-col gap-20 font-Fira-Code text-dark '>
+      <div className='flex flex-col h-auto gap-24 px-20 py-32 bg-dark'>
+        <h2 data-aos="fade-right" data-aos-duration="700" className='text-5xl font-Fira-Code text-medium drop-shadow-lg'>{'{Habilidades}'}</h2>
+        <div className='flex flex-col pl-8 gap-36 font-Fira-Code text-light '>
 
-          <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-12'>
-            <h3 className='text-3xl drop-shadow-lg'>Tecnologías Frontend</h3>
+          <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
+
+            <h3 className='text-3xl drop-shadow-lg text-center'> {'0: "Tecnologías Frontend"'}</h3>
             <div className='flex flex-wrap justify-around gap-y-14 gap-x-20'>
               {
                 frontend.map(({ src, alt }) => (
@@ -100,8 +111,8 @@ const Home = () => {
               }
             </div>
           </div>
-          <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-12'>
-            <h3 className='text-3xl drop-shadow-lg '>Tecnologías Backend</h3>
+          <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
+            <h3 className='text-3xl drop-shadow-lg text-center '>{'1: "Tecnologías Backend"'}</h3>
             <div className='flex justify-around'>
               {
                 backend.map(({ src, alt }) => (
@@ -110,8 +121,8 @@ const Home = () => {
               }
             </div>
           </div>
-          <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-12'>
-            <h3 className='text-3xl drop-shadow-lg'>Tecnologías Mobile</h3>
+          <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
+            <h3 className='text-3xl drop-shadow-lg text-center'>{'2: "Tecnologías Mobile"'}</h3>
             <div className='flex justify-around'>
               {
                 mobile.map(({ src, alt }) => (
@@ -120,8 +131,8 @@ const Home = () => {
               }
             </div>
           </div>
-          <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-12'>
-            <h3 className='text-3xl drop-shadow-lg '>Bases de Datos</h3>
+          <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
+            <h3 className='text-3xl drop-shadow-lg text-center '>{'3: "Bases de Datos"'}</h3>
             <div className='flex justify-around'>
               {
                 database.map(({ src, alt }) => (
@@ -130,8 +141,8 @@ const Home = () => {
               }
             </div>
           </div>
-          <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-12'>
-            <h3 className='text-3xl drop-shadow-lg '>Testing</h3>
+          <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
+            <h3 className='text-3xl drop-shadow-lg text-center '>{'4: "Testing"'}</h3>
             <div className='flex justify-around'>
               {
                 testing.map(({ src, alt }) => (
@@ -140,8 +151,8 @@ const Home = () => {
               }
             </div>
           </div>
-          <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-12'>
-            <h3 className='text-3xl drop-shadow-lg '>Herramientas</h3>
+          <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
+            <h3 className='text-3xl drop-shadow-lg text-center'>{'5: "Herramientas"'}</h3>
             <div className='flex justify-around'>
               {
                 tools.map(({ src, alt }) => (
@@ -154,17 +165,25 @@ const Home = () => {
         </div>
       </div>
       {/* PROJECTS */}
-      <div className='flex flex-col gap-16 px-20 py-32 bg-medium'>
-        <h2 data-aos="fade-right" data-aos-duration="700" className='text-5xl font-Fira-Code text-dark drop-shadow-lg'>{'{Proyectos}'}</h2>
+      <div className='flex flex-col gap-16 px-20 py-32 bg-dark'>
+        <h2 data-aos="fade-right" data-aos-duration="700" className='text-5xl font-Fira-Code text-medium drop-shadow-lg'>{'{Proyectos}'}</h2>
         <div className='grid grid-cols-3 gap-3'>
-          <ProjectItem />
-          <ProjectItem />
-          <ProjectItem />
-          <ProjectItem />
-          <ProjectItem />
+          {
+            project.map(({ description, details, img, name, repo, tools, url }) => (
+              <ProjectItem key={name} description={description} details={details} img={img} name={name} repo={repo} tools={tools} url={url} />
+            ))
+          }
 
+          {/* {
+            isAnItemSelected === true ? (
+              <ProjectPopup name={selectedItem?.name} url={selectedItem?.url} details={selectedItem?.details} img={selectedItem?.img} repo={selectedItem?.repo} tools={selectedItem?.tools} description={selectedItem?.description} />
+
+            ) : (<></>)
+          } */}
+          {/* <ProjectPopup name={selectedItem?.name} url={selectedItem?.url} details={selectedItem?.details} img={selectedItem?.img} repo={selectedItem?.repo} tools={selectedItem?.tools} description={selectedItem?.description} /> */}
         </div>
       </div>
+
     </div>
   )
 }
