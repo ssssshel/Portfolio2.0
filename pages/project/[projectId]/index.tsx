@@ -22,7 +22,8 @@ export default function ProjectMenu() {
     details: "",
     img: "",
     url: "",
-    repo: ""
+    repo: "",
+    type: ""
   })
 
   console.log(currentProject)
@@ -33,21 +34,34 @@ export default function ProjectMenu() {
 
   useEffect(() => {
     const prod = project.filter((p) => { return p.name == projectId })
-    const fProd = prod.map((e) => { setCurrentProject({ description: e.description, details: e.details, img: e.img, name: e.name, repo: e.repo, tools: e.tools, url: e.url }) })
+    const fProd = prod.map((e) => { setCurrentProject({ description: e.description, details: e.details, img: e.img, name: e.name, repo: e.repo, tools: e.tools, url: e.url, type: e.type }) })
     fProd
   }, [projectId])
 
 
   return (
     <div>
-      <HeadLayout description="" title="" />
-      <div>
-        <Navbar />
-        <div className="flex flex-col h-screen w-full bg-dark">
-          <div className="h-40% w-full relative bg-slate-300">
-            <Image alt={currentProject.name} src={`/img/projects/${currentProject.img}`} layout='fill' objectFit="cover" objectPosition="center" />
+      <HeadLayout description="" title={currentProject.name} />
+      <Navbar />
+      <div className="h-screen w-full -top-10 relative">
+        <div className="flex bg-light h-screen w-full px-20  pb-10">
+          <div className="w-1/2 flex flex-col justify-center">
+            {
+              currentProject.type == "web" ? (
+                <div className="w-full h-1/2 relative bg-slate-300">
+                  <Image alt={currentProject.name} src={`/img/projects/${currentProject.img}`} layout='fill' objectFit="cover" objectPosition="center" />
+                </div>
+
+              ) : (
+                <div className="w-1/2 h-4/5 relative bg-slate-300">
+                  <Image alt={currentProject.name} src={`/img/projects/${currentProject.img}`} layout='fill' objectFit="cover" objectPosition="center" />
+                </div>
+
+              )
+            }
+
           </div>
-          <div className="h-1/2 w-full bg-slate-600">
+          <div className="">
 
           </div>
         </div>

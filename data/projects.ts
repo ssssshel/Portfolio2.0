@@ -9,18 +9,20 @@ export function projectsList() {
       details: "*Solo Vista Web*",
       img: "glorious.png",
       url: "https://glorious-vs.vercel.app/",
-      repo: ""
+      repo: "https://github.com/ssssshel/GloriousVS",
+      type: "web"
     },
     {
-      name: "BalatPeru App",
+      name: "BalatPeruApp",
       description: "Aplicación móvil para la gestión de viajes y pasajeros",
       tools: [
         "Ionic", "React", "Capacitor", "Firebase", "PostgreSQL"
       ],
       details: "",
-      img: "",
+      img: "balatperu.jpeg",
       url: "",
-      repo: ""
+      repo: "",
+      type: "mobile"
     },
     {
       name: "Dione",
@@ -31,19 +33,32 @@ export function projectsList() {
       details: "",
       img: "dione.png",
       url: "https://dione.vercel.app/",
-      repo: ""
-
+      repo: "https://github.com/ssssshel/Dione",
+      type: "web"
     },
     {
-      name: "Mediplants App",
+      name: "MediplantsApp",
       description: "Aplicación móvil para la venta de plantas medicinales peruanas",
       tools: [
         "Flutter", "Firebase", "PostgreSQL"
       ],
       details: "",
-      img: "",
+      img: "mediplants.jpeg",
       url: "",
-      repo: ""
+      repo: "https://github.com/ssssshel/MediPlants_App",
+      type: "mobile"
+    },
+    {
+      name: "MediplantsAPI",
+      description: "API web para la aplicación móvil de Mediplants",
+      tools: [
+        "NodeJS", "Express"
+      ],
+      details: "",
+      img: "mediplantsAPI.png",
+      url: "https://mediplants-api.herokuapp.com/",
+      repo: "https://github.com/ssssshel/Mediplants_BackendAPI",
+      type: "web"
     },
     {
       name: "Xeon",
@@ -54,7 +69,8 @@ export function projectsList() {
       details: "*Solo Vista Web*",
       img: "xeon.png",
       url: "https://xeon11.herokuapp.com/",
-      repo: ""
+      repo: "https://github.com/ssssshel/xeonProject",
+      type: "web"
     },
   ]
 

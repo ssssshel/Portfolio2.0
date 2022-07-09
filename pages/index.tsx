@@ -162,8 +162,8 @@ const Home = () => {
         </div>
       </div>
       {/* PROJECTS */}
-      <div className='flex flex-col gap-16 px-20 py-32 bg-dark'>
-        <h2 data-aos="fade-right" data-aos-duration="700" className='text-5xl font-Fira-Code text-medium drop-shadow-lg'>{'{Proyectos}'}</h2>
+      <div className='flex flex-col gap-16 px-20 py-32 bg-independence'>
+        <h2 data-aos="fade-right" data-aos-duration="700" className='text-5xl font-Fira-Code text-light drop-shadow-lg'>{'{Proyectos}'}</h2>
         <div className='grid grid-cols-3 gap-3'>
           {
             project.map(({ description, details, img, name, repo, tools, url }) => (

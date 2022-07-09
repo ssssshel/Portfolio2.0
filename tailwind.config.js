@@ -28,6 +28,7 @@ module.exports = {
       colors: {
         'dark': '#121216',
         'medium': '#BBBAC6',
+        'independence': '#49495A',
         'light': '#FBF8F4',
       },
       spacing: {

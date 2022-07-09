@@ -9,9 +9,9 @@ export default function Footer() {
       </div>
       <div className="p-20 flex flex-col justify-around h-full">
         <p className="text-5xl">¿Deseas contactarme?</p>
-        <p className="text-lg">Puedes encontrarme en mis distintas redes sociales</p>
+        <p className=" font-Inter text-lg">Puedes encontrarme en Github, LinkedIn y StackOverflow:</p>
         <div >
-          <ul className="flex">
+          <ul className="flex text-4xl gap-20">
             <li>
               <Link href=""><a ><FontAwesomeIcon icon={faGithub} /></a></Link>
             </li>
@@ -23,9 +23,9 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div><p>O enviar un correo a:</p> <p>angelarteaga989@gmail.com</p></div>
+        <div><p className="font-Inter">O enviar un correo a:</p> <p className="font-semibold text-lg text-medium">angelarteaga989@gmail.com</p></div>
       </div>
-      <div><p>{'</> with ❤️ by ssssshel'}</p></div>
+      <div className="bg-medium h-10 flex justify-end px-20 items-center font-medium text-dark"><p>{'</> with ❤️ by ssssshel'}</p></div>
 
     </footer>
   )
