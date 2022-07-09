@@ -1,7 +1,10 @@
 import Image from "next/image"
+import { useRouter } from "next/router"
 import { useEffect, useRef, useState } from "react"
 
 export default function ProjectItem({ name, description, tools, details, img, url, repo }: { name: string, description: string, tools: Array<string>, details: string, img: string, url: string, repo: string }): JSX.Element {
+
+  const router = useRouter()
 
   const ref = useRef<HTMLDivElement>(null)
 
@@ -16,11 +19,6 @@ export default function ProjectItem({ name, description, tools, details, img, ur
     }
   }, [showItem])
 
-  function showPopup() {
-    document.getElementById("popup")!.style.display = "grid"
-  }
-
-  // console.log(selectedItem)
   return (
     <div onMouseOver={() => setShowItem(true)} onMouseLeave={() => setShowItem(false)} className='relative h-60% w-full drop-shadow-lg'>
       <Image alt='' src={`/img/projects/${img}`} layout='fill' objectFit="cover" objectPosition="center" />
@@ -28,17 +26,7 @@ export default function ProjectItem({ name, description, tools, details, img, ur
         <p className='text-3xl text-light'>{name}</p>
         <p className='text-light'>{tools.join(" | ")}</p>
         <p className='text-light text-sm'>{description}</p>
-        <button className='bg-medium hover:bg-light' onClick={() => { showPopup() }} ><p>Ver más</p></button>
-      </div>
-      <div id="popup" className="fixed grid-cols-5 grid-rows-5 top-0 left-0 w-screen h-screen z-100 bg-dark/80 backdrop-blur-lg">
-        <div className=" col-start-2 col-span-3 flex flex-row bg-white row-start-2 row-span-3">
-          <div className="relative w-1/2 h-full">
-            <Image src={`/img/projects/${img}`} alt={name} layout='fill' objectFit="cover" objectPosition="center" />
-          </div>
-          <div className="w-1/2 h-full bg">
-            <p className="text-dark">{name} </p>
-          </div>
-        </div>
+        <button className='bg-medium hover:bg-light' onClick={() => router.push(`/project/${name}`)} ><p>Ver más</p></button>
       </div>
     </div>
   )

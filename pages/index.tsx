@@ -1,4 +1,3 @@
-import type { NextPage } from 'next'
 import HeadLayout from '../components/HeadLayout'
 import Navbar from '../components/Navbar'
 import Navbar2 from '../components/Navbar2x'
@@ -8,10 +7,8 @@ import skills from '../data/skills'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
 import ProjectItem from '../components/ProjectItem'
 import { projectsList } from '../data/projects'
-import ProjectPopup from '../components/ProjectPopup'
 
 
 const Home = () => {
@@ -33,12 +30,12 @@ const Home = () => {
   }
 
   return (
-    <div className='bg-white' >
+    <div className='bg-dark' >
       <HeadLayout title="Index" description='Portafolio Desarrollador Angel Arteaga | Portfolio Angel Arteaga Developer' />
       {/* HEADER */}
+      <Navbar />
       <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col justify-between w-full h-screen bg-dark '>
-        <Navbar />
-
+        <div className=''></div>
         <div data-aos="fade-up" className='flex flex-col items-center justify-center w-full pl-20 pr-20 '>
           <h1 className='text-6xl font-medium font-Fira-Code text-light drop-shadow-md'>{'<ANGEL id="ARTEAGA"'}</h1>
           <h2 className='text-3xl font-Fira-Code text-medium drop-shadow-md'>{'type="Full-Stack Developer"/>'}</h2>
@@ -113,7 +110,7 @@ const Home = () => {
           </div>
           <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
             <h3 className='text-3xl drop-shadow-lg text-center '>{'1: "Tecnologías Backend"'}</h3>
-            <div className='flex justify-around'>
+            <div className='flex flex-wrap justify-around gap-y-14 gap-x-20'>
               {
                 backend.map(({ src, alt }) => (
                   <SkillItem key={src} src={src} alt={alt} />
@@ -123,7 +120,7 @@ const Home = () => {
           </div>
           <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
             <h3 className='text-3xl drop-shadow-lg text-center'>{'2: "Tecnologías Mobile"'}</h3>
-            <div className='flex justify-around'>
+            <div className='flex flex-wrap justify-around gap-y-14 gap-x-20'>
               {
                 mobile.map(({ src, alt }) => (
                   <SkillItem key={src} src={src} alt={alt} />
@@ -133,7 +130,7 @@ const Home = () => {
           </div>
           <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
             <h3 className='text-3xl drop-shadow-lg text-center '>{'3: "Bases de Datos"'}</h3>
-            <div className='flex justify-around'>
+            <div className='flex flex-wrap justify-around gap-y-14 gap-x-20'>
               {
                 database.map(({ src, alt }) => (
                   <SkillItem key={src} src={src} alt={alt} />
@@ -143,7 +140,7 @@ const Home = () => {
           </div>
           <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
             <h3 className='text-3xl drop-shadow-lg text-center '>{'4: "Testing"'}</h3>
-            <div className='flex justify-around'>
+            <div className='flex flex-wrap justify-around gap-y-14 gap-x-20'>
               {
                 testing.map(({ src, alt }) => (
                   <SkillItem key={src} src={src} alt={alt} />
@@ -153,7 +150,7 @@ const Home = () => {
           </div>
           <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
             <h3 className='text-3xl drop-shadow-lg text-center'>{'5: "Herramientas"'}</h3>
-            <div className='flex justify-around'>
+            <div className='flex flex-wrap justify-around gap-y-14 gap-x-20'>
               {
                 tools.map(({ src, alt }) => (
                   <SkillItem key={src} src={src} alt={alt} />
@@ -174,16 +171,10 @@ const Home = () => {
             ))
           }
 
-          {/* {
-            isAnItemSelected === true ? (
-              <ProjectPopup name={selectedItem?.name} url={selectedItem?.url} details={selectedItem?.details} img={selectedItem?.img} repo={selectedItem?.repo} tools={selectedItem?.tools} description={selectedItem?.description} />
-
-            ) : (<></>)
-          } */}
-          {/* <ProjectPopup name={selectedItem?.name} url={selectedItem?.url} details={selectedItem?.details} img={selectedItem?.img} repo={selectedItem?.repo} tools={selectedItem?.tools} description={selectedItem?.description} /> */}
         </div>
       </div>
-
+      {/* FOOTER */}
+      <Footer />
     </div>
   )
 }

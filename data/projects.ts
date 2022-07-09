@@ -63,3 +63,14 @@ export function projectsList() {
   }
 }
 
+export interface ProjectData {
+  name: string,
+  description: string,
+  tools: string[],
+  details: string,
+  img: string,
+  url: string,
+  repo: string
+}
+
+export type Project = ProjectData
