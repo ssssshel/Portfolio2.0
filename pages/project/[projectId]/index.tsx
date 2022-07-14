@@ -43,12 +43,12 @@ export default function ProjectMenu() {
     <div>
       <HeadLayout description="" title={currentProject.name} />
       <Navbar />
-      <div className="h-screen w-full -top-10 relative">
-        <div className="flex bg-light h-screen w-full px-20  pb-10">
+      <div className="h-screen w-full ">
+        <div className="flex bg-medium h-screen w-full px-20  pb-10">
           <div className="w-1/2 flex flex-col justify-center">
             {
               currentProject.type == "web" ? (
-                <div className="w-full h-1/2 relative bg-slate-300">
+                <div className="w-full h-1/2 relative bg-dark">
                   <Image alt={currentProject.name} src={`/img/projects/${currentProject.img}`} layout='fill' objectFit="cover" objectPosition="center" />
                 </div>
 
@@ -62,7 +62,11 @@ export default function ProjectMenu() {
 
           </div>
           <div className="">
-
+            <div>
+              <h1 className="text-4xl font-Fira-Code text-white">{currentProject.name}</h1>
+              <p>{currentProject.tools.join(' | ')}</p>
+              {/* <p>{currentProject}</p> */}
+            </div>
           </div>
         </div>
       </div>

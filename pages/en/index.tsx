@@ -1,14 +1,14 @@
-import HeadLayout from '../components/HeadLayout'
-import Navbar from '../components/Navbar'
-import Navbar2 from '../components/Navbar2x'
-import Footer from '../components/Footer'
-import SkillItem from '../components/SkillItem'
-import skills from '../data/skills'
+import HeadLayout from '../../components/HeadLayout'
+import Navbar from '../../components/Navbar'
+import Navbar2 from '../../components/Navbar2x'
+import Footer from '../../components/Footer'
+import SkillItem from '../../components/SkillItem'
+import skills from '../../data/skills'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect, useState } from 'react'
-import ProjectItem from '../components/ProjectItem'
-import { projectsList } from '../data/projects'
+import ProjectItem from '../../components/ProjectItem'
+import { projectsList } from '../../data/projects'
 
 
 const Home = () => {
@@ -42,19 +42,19 @@ const Home = () => {
         </div>
 
         <div className='flex items-center justify-center w-full h-20 font-medium bg-medium'>
-          <p className='text-lg font-normal font-Fira-Code text-dark'>{'onClick={() => DescubreMás()}'}</p>
+          <p className='text-lg font-normal font-Fira-Code text-dark'>{'onClick={() =>  DiscoverMore()}'}</p>
         </div>
       </div>
       {/* ABOUT */}
       <div className='flex flex-col justify-around w-full h-screen p-20 bg-light'>
 
-        <h2 data-aos="fade-down" data-aos-duration="700" className='text-5xl font-medium font-Fira-Code text-dark drop-shadow-lg'>{'{Sobre mí} '}</h2>
+        <h2 data-aos="fade-down" data-aos-duration="700" className='text-5xl font-medium font-Fira-Code text-dark drop-shadow-lg'>{'{About} '}</h2>
         <div data-aos="fade-right" data-aos-duration="700" className='flex flex-col gap-5 pr-40 text-lg font-light leading-8 text-dark' >
           <p>
-            Hola! Soy Angel Arteaga, desarrollador Full-Stack, chef por hobbie y un apasionado por la biología y los gatos.
+            Hi! I´m Angel Arteaga, Full-Stack Developer, chef as a hobbie and a passionate about biology and cats.
           </p>
-          <p>Actualmente estudio la carrera de Diseño y Desarrollo de Software, paralelo a ello, desarrollo proyectos basados en tecnologías multiplataforma y disfruto de aprender nuevos temas por mi cuenta.</p>
-          <p>Cuento con experiencia trabajando con todo tipo de clientes y requerimientos, adicionalmente, me considero una persona proactiva y analítica, siempre dispuesto a aportar valor a mi equipo para lograr los objetivos planteados.</p>
+          <p>I´m currently studying the career of Software Design and Development, in addition, I develop projects based on multi plattform technologies, and I enjoy learning new topics on my own.</p>
+          <p>I have experience working with every types of clients and requirements, aditionally, I consider myself as a proactive and analytic person, always disposed to add value to my team for the success of our projects.</p>
         </div>
         <p className='text-xl font-medium font-Fira-Code drop-shadow-md text-dark'>Leer más</p>
       </div>
@@ -164,7 +164,7 @@ const Home = () => {
       {/* PROJECTS */}
       <div className='flex flex-col gap-16 px-20 py-32 bg-independence'>
         <h2 data-aos="fade-right" data-aos-duration="700" className='text-5xl font-Fira-Code text-light drop-shadow-lg'>{'{Proyectos}'}</h2>
-        <div data-aos="fade-down" data-aos-duration="700" className='grid grid-cols-3 gap-3'>
+        <div className='grid grid-cols-3 gap-3'>
           {
             project.map(({ description, details, img, name, repo, tools, url, type }) => (
               <ProjectItem key={name} description={description} details={details} img={img} name={name} repo={repo} tools={tools} url={url} type={type} />

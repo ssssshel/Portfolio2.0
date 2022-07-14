@@ -21,7 +21,7 @@ export function projectsList() {
       details: "",
       img: "balatperu.jpeg",
       url: "",
-      repo: "",
+      repo: "https://github.com/ssssshel/balatPeruApp",
       type: "mobile"
     },
     {

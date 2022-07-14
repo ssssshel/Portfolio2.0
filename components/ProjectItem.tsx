@@ -1,8 +1,10 @@
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect, useRef, useState } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
-export default function ProjectItem({ name, description, tools, details, img, url, repo }: { name: string, description: string, tools: Array<string>, details: string, img: string, url: string, repo: string }): JSX.Element {
+export default function ProjectItem({ name, description, tools, details, img, url, repo, type }: { name: string, description: string, tools: Array<string>, details: string, img: string, url: string, repo: string, type: string }): JSX.Element {
 
   const router = useRouter()
 
@@ -26,7 +28,28 @@ export default function ProjectItem({ name, description, tools, details, img, ur
         <p className='text-3xl text-light'>{name}</p>
         <p className='text-light'>{tools.join(" | ")}</p>
         <p className='text-light text-sm'>{description}</p>
-        <button className='bg-medium hover:bg-light' onClick={() => router.push(`/project/${name}`)} ><p>Ver más</p></button>
+        {
+          type == "web" ? (
+            <div className="flex justify-between gap-2">
+              <a href={url} target="_blank" rel="noopener noreferrer" className=" w-full">
+                <button className='bg-medium hover:bg-light py-1 w-full' ><p>Ver sitio</p></button>
+              </a>
+              <a href={repo} target="_blank" rel="noopener noreferrer" className=" w-full">
+                <button className='bg-medium hover:bg-light py-1 flex items-center justify-center gap-2 w-full' ><FontAwesomeIcon icon={faGithub} /><p>Repositorio</p></button>
+              </a>
+            </div>
+
+          ) : (
+            <div className="flex justify-between gap-2">
+              <a href={repo} target="_blank" rel="noopener noreferrer" className=" w-full">
+                <button className='bg-medium hover:bg-light py-1 flex items-center justify-center gap-2 w-full'  ><FontAwesomeIcon icon={faGithub} /><p>Ver repositorio</p></button>
+
+              </a>
+
+            </div>
+
+          )
+        }
       </div>
     </div>
   )
