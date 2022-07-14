@@ -46,7 +46,7 @@ const Home = () => {
         </div>
       </div>
       {/* ABOUT */}
-      <div className='flex flex-col justify-around w-full h-screen p-20 bg-light'>
+      <div id='about' className='flex flex-col justify-around w-full h-screen p-20 bg-light'>
 
         <h2 data-aos="fade-down" data-aos-duration="700" className='text-5xl font-medium font-Fira-Code text-dark drop-shadow-lg'>{'{Sobre mí} '}</h2>
         <div data-aos="fade-right" data-aos-duration="700" className='flex flex-col gap-5 pr-40 text-lg font-light leading-8 text-dark' >
@@ -65,18 +65,12 @@ const Home = () => {
 
           </div>
           <div className='flex flex-col justify-around w-1/2 h-full p-20 bg-dark text-light font-Fira-Code'>
-            <h3 className='text-5xl font-Fira-Code '>{'Experiencia Laboral={'}</h3>
-            <ul className='flex flex-col gap-5 leading-7'>
-              <li><ul>
-                <li>{'{Empresa: "Certus",'}</li>
-                <li>{'Cargo: "Estudiante de Investigación",'}</li>
-                <li>{'Descripción: ["Planeamiento de proyectos con metodologías ágiles", "desarrollo de APIs, aplicaciones web y móviles", "administración de servicios cloud"]},'}</li>
-              </ul>
-              </li>
-              <li><ul>
+            <h3 className='text-5xl leading-tight font-Fira-Code '>{'Experiencia Laboral={'}</h3>
+            <ul className='flex flex-col text-lg leading-7'>
+              <li><ul className='flex flex-col gap-3'>
                 <li>{'{Empresa: "Mantra Consultores",'}</li>
-                <li>{'Cargo: "Desarrollador y Asistente HelpDesk",'}</li>
-                <li>{'Descripción: ["Desarrollo de Apps móviles y web", "implementación de servicios cloud y APIs", "Análisis de requerimientos", "Elaboración de documentación"]}}'}</li>
+                <li>{'Cargo: "Desarrollador FullStack",'}</li>
+                <li className='leading-10'>{'Descripción: ["Desarrollo de aplicaciones móviles y web", "Implementación de servicios web y cloud", "Análisis de requerimientos", "Diseño y maquetación de interfaces de usuario"]},'}</li>
               </ul>
               </li>
 
@@ -85,7 +79,15 @@ const Home = () => {
         </div>
         <div data-aos="fade-right" data-aos-duration="700" className='flex flex-row w-full h-screen'>
           <div className='w-1/2 h-full px-20 py-32 bg-medium'>
-            <h3 className='text-5xl font-Fira-Code text-dark drop-shadow-lg'>¿Ideas?</h3>
+            {/* <h3 className='text-5xl font-Fira-Code text-dark  drop-shadow-lg'>¿Ideas?</h3> */}
+            <ul className='flex flex-col text-lg leading-7'>
+              <li><ul className='flex flex-col gap-3'>
+                <li>{'{Empresa: "Certus",'}</li>
+                <li>{'Cargo: "Estudiante de Investigación",'}</li>
+                <li className='leading-10'>{'Descripción: ["Planeamiento de proyectos con metodologías ágiles", "desarrollo de APIs, aplicaciones web y móviles", "administración de servicios cloud"]}},'}</li>
+              </ul>
+              </li>
+            </ul>
           </div>
           <div className='w-1/2 h-full'>
 
@@ -93,7 +95,7 @@ const Home = () => {
         </div>
       </div>
       {/* SKILLS */}
-      <div className='flex flex-col h-auto gap-24 px-20 py-32 bg-dark'>
+      <div id='skills' className='flex flex-col h-auto gap-24 px-20 py-32 bg-dark'>
         <h2 data-aos="fade-right" data-aos-duration="700" className='text-5xl font-Fira-Code text-medium drop-shadow-lg'>{'{Habilidades}'}</h2>
         <div className='flex flex-col pl-8 gap-36 font-Fira-Code text-light '>
 
@@ -162,7 +164,7 @@ const Home = () => {
         </div>
       </div>
       {/* PROJECTS */}
-      <div className='flex flex-col gap-16 px-20 py-32 bg-independence'>
+      <div id='projects' className='flex flex-col gap-16 px-20 py-32 bg-independence'>
         <h2 data-aos="fade-right" data-aos-duration="700" className='text-5xl font-Fira-Code text-light drop-shadow-lg'>{'{Proyectos}'}</h2>
         <div data-aos="fade-down" data-aos-duration="700" className='grid grid-cols-3 gap-3'>
           {

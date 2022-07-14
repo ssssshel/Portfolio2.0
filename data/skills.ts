@@ -112,6 +112,10 @@ export default function skills() {
       src: "Typescript_logo_2020.svg.png",
       alt: "Typescript"
     },
+    {
+      src: "docker.png",
+      alt: "Docker"
+    }
   ]
 
   return {
