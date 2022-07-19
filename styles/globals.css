@@ -18,6 +18,8 @@ body {
   margin: 0;
   font-family: "Fira-Code", monospace;
   font-family: "Inter", sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 a {

@@ -1,6 +1,5 @@
 import HeadLayout from '../components/HeadLayout'
 import Navbar from '../components/Navbar'
-import Navbar2 from '../components/Navbar2x'
 import Footer from '../components/Footer'
 import SkillItem from '../components/SkillItem'
 import skills from '../data/skills'
@@ -9,6 +8,7 @@ import 'aos/dist/aos.css'
 import { useEffect, useState } from 'react'
 import ProjectItem from '../components/ProjectItem'
 import { projectsList } from '../data/projects'
+import Image from 'next/image'
 
 
 const Home = () => {
@@ -30,11 +30,11 @@ const Home = () => {
   // }
 
   return (
-    <div className='bg-dark' >
+    <div className=' bg-dark' >
       <HeadLayout title="Index" description='Portafolio Desarrollador Angel Arteaga | Portfolio Angel Arteaga Developer' />
       {/* HEADER */}
       <Navbar />
-      <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col justify-between w-full h-screen bg-dark '>
+      <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col  justify-between w-full h-screen bg-dark '>
         <div className=''></div>
         <div data-aos="fade-up" className='flex flex-col items-center justify-center w-full pl-20 pr-20 '>
           <h1 className='text-6xl font-medium font-Fira-Code text-light drop-shadow-md'>{'<ANGEL id="ARTEAGA"'}</h1>
@@ -56,43 +56,39 @@ const Home = () => {
           <p>Actualmente estudio la carrera de Diseño y Desarrollo de Software, paralelo a ello, desarrollo proyectos basados en tecnologías multiplataforma y disfruto de aprender nuevos temas por mi cuenta.</p>
           <p>Cuento con experiencia trabajando con todo tipo de clientes y requerimientos, adicionalmente, me considero una persona proactiva y analítica, siempre dispuesto a aportar valor a mi equipo para lograr los objetivos planteados.</p>
         </div>
-        <p className='text-xl font-medium font-Fira-Code drop-shadow-md text-dark'>Leer más</p>
+        {/* <p className='text-xl font-medium font-Fira-Code drop-shadow-md text-dark'>Leer más</p> */}
       </div>
       {/* ABOUT SEE MORE */}
-      <div className=''>
-        <div data-aos="fade-left" data-aos-duration="700" className='flex flex-row w-full h-screen'>
-          <div className='w-1/2 h-full ' >
+      <div >
+        <div className='flex flex-row w-full h-screen'>
+          <div data-aos="fade-left" data-aos-duration="700" className='w-1/2 h-full relative' >
+            <Image alt='' src={'/img/misc/img1.jpg'} layout='fill' objectFit="cover" objectPosition="center" />
 
           </div>
-          <div className='flex flex-col justify-around w-1/2 h-full p-20 bg-dark text-light font-Fira-Code'>
-            <h3 className='text-5xl leading-tight font-Fira-Code '>{'Experiencia Laboral={'}</h3>
+          <div data-aos="fade-top" data-aos-duration="700" className='flex flex-col justify-around w-1/2 h-full p-20 bg-dark text-light font-Fira-Code'>
+            <h3 className='text-5xl leading-tight font-Fira-Code '>{'{Experiencia Laboral}'}</h3>
             <ul className='flex flex-col text-lg leading-7'>
-              <li><ul className='flex flex-col gap-3'>
-                <li>{'{Empresa: "Mantra Consultores",'}</li>
+              <li><ul className='flex flex-col px-5 font-Inter gap-3'>
+                {/* <li>{'{Empresa: "Mantra Consultores",'}</li>
                 <li>{'Cargo: "Desarrollador FullStack",'}</li>
-                <li className='leading-10'>{'Descripción: ["Desarrollo de aplicaciones móviles y web", "Implementación de servicios web y cloud", "Análisis de requerimientos", "Diseño y maquetación de interfaces de usuario"]},'}</li>
+                <li className='leading-10'>{'Descripción: ["Desarrollo de aplicaciones móviles y web", "Implementación de servicios web y cloud", "Análisis de requerimientos", "Diseño y maquetación de interfaces de usuario"]},'}</li> */}
+                <li className='text-3xl font-extralight' >Mantra Consultores</li>
+                <li className='font-bold'>Desarrollador Full-Stack</li>
+                <li>Jun 2022 - Actualmente</li>
+                <li className='text-xl font-light'>Desarrollé aplicaciones móviles y web, implementé servicios cloud, analicé y documenté requerimientos, diseñé y maqueté interfaces de usuario.</li>
               </ul>
               </li>
 
             </ul>
           </div>
         </div>
-        <div data-aos="fade-right" data-aos-duration="700" className='flex flex-row w-full h-screen'>
+        {/* <div data-aos="fade-right" data-aos-duration="700" className='flex flex-row w-full h-screen'>
           <div className='w-1/2 h-full px-20 py-32 bg-medium'>
-            {/* <h3 className='text-5xl font-Fira-Code text-dark  drop-shadow-lg'>¿Ideas?</h3> */}
-            <ul className='flex flex-col text-lg leading-7'>
-              <li><ul className='flex flex-col gap-3'>
-                <li>{'{Empresa: "Certus",'}</li>
-                <li>{'Cargo: "Estudiante de Investigación",'}</li>
-                <li className='leading-10'>{'Descripción: ["Planeamiento de proyectos con metodologías ágiles", "desarrollo de APIs, aplicaciones web y móviles", "administración de servicios cloud"]}},'}</li>
-              </ul>
-              </li>
-            </ul>
+            
           </div>
-          <div className='w-1/2 h-full'>
-
+          <div className='w-1/2 h-full relative'>
           </div>
-        </div>
+        </div> */}
       </div>
       {/* SKILLS */}
       <div id='skills' className='flex flex-col h-auto gap-24 px-20 py-32 bg-dark'>

@@ -23,7 +23,7 @@ export default function ProjectItem({ name, description, tools, details, img, ur
 
   return (
     <div onMouseOver={() => setShowItem(true)} onMouseLeave={() => setShowItem(false)} className='relative h-60% w-full drop-shadow-lg'>
-      <Image alt='' src={`/img/projects/${img}`} layout='fill' objectFit="cover" objectPosition="center" />
+      <Image alt={img} src={`/img/projects/${img}`} layout='fill' objectFit="cover" objectPosition="center" />
       <div ref={ref} className='absolute hidden flex-col justify-center w-full h-full gap-4 p-10 bg-dark/70'>
         <p className='text-3xl text-light'>{name}</p>
         <p className='text-light'>{tools.join(" | ")}</p>
