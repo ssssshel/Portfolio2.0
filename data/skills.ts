@@ -17,6 +17,10 @@ export default function skills() {
       alt: "Sass"
     },
     {
+      src: "nglogo.png",
+      alt: "Angular"
+    },
+    {
       src: "React-icon.png",
       alt: "React"
     },
