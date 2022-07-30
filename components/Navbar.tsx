@@ -39,7 +39,7 @@ export default function Navbar(): JSX.Element {
   return (
     <div>
       {/* MOBILE */}
-      <nav className="w-full px-20 lg:hidden sm:px-10 bg-dark/70 backdrop-blur-sm sticky top-0 z-30 text-light ">
+      <nav className="w-full px-20 h-full lg:hidden sm:px-10 bg-dark/70 backdrop-blur-sm sticky top-0 z-30 text-light ">
         <div className="flex h-20 pt-5 flex-row justify-between items-baseline">
           <p className="font-Inter font-extralight text-3xl"> <Link href={'/'}><a>ssssshel</a></Link></p>
           <div>
@@ -83,8 +83,12 @@ export default function Navbar(): JSX.Element {
             </ul>
           )
         }
-
       </nav>
+
+      {/* OPTIONS */}
+      {/* <div className="h-screen w-screen z-30 bg-slate-400">
+
+      </div> */}
     </div>
   )
 }
