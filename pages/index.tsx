@@ -22,22 +22,16 @@ const Home = () => {
   const { backend, database, frontend, mobile, testing, tools } = skills()
   const { project } = projectsList()
 
-  // const [showPopup, setShowPopup] = useState(false)
-  // const [selectedItem, setSelectedItem] = useState(null)
-
-  // const handleShowPopup = () => {
-  //   setShowPopup(true)
-  // }
 
   return (
     <div className=' bg-dark' >
       <HeadLayout title="Index" description='Portafolio Desarrollador Angel Arteaga | Portfolio Angel Arteaga Developer' />
       {/* HEADER */}
       <Navbar />
-      <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col  justify-between w-full h-screen bg-dark '>
-        <div className=''></div>
-        <div data-aos="fade-up" className='flex flex-col items-center justify-center w-full pl-20 pr-20 '>
-          <h1 className='text-6xl font-medium font-Fira-Code text-light drop-shadow-md'>{'<ANGEL id="ARTEAGA"'}</h1>
+      <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col justify-between w-full h-screen bg-dark '>
+        <div className='h-20'></div>
+        <div data-aos="fade-up" className='flex flex-col items-center justify-center w-full px-20 sm:px-10 '>
+          <h1 className='text-6xl font-medium sm:text-5xl font-Fira-Code text-light drop-shadow-md'>{'<ANGEL id="ARTEAGA"'}</h1>
           <h2 className='text-3xl font-Fira-Code text-medium drop-shadow-md'>{'type="Full-Stack Developer"/>'}</h2>
         </div>
 
@@ -46,10 +40,10 @@ const Home = () => {
         </div>
       </div>
       {/* ABOUT */}
-      <div id='about' className='flex flex-col justify-around w-full h-screen p-20 bg-light'>
+      <div id='about' className='flex flex-col justify-around w-full h-screen p-20 sm:px-10 bg-light'>
 
-        <h2 data-aos="fade-down" data-aos-duration="700" className='text-5xl font-medium font-Fira-Code text-dark drop-shadow-lg'>{'{Sobre mí} '}</h2>
-        <div data-aos="fade-right" data-aos-duration="700" className='flex flex-col gap-5 pr-40 text-lg font-light leading-8 text-dark' >
+        <h2 data-aos="fade-down" data-aos-duration="700" className='text-5xl font-medium sm:text-4xl sm:text-center font-Fira-Code text-dark drop-shadow-lg'>{'{Sobre mí} '}</h2>
+        <div data-aos="fade-right" data-aos-duration="700" className='flex flex-col gap-5 pr-40 text-lg font-light leading-8 sm:px-0 text-dark' >
           <p>
             Hola! Soy Angel Arteaga, desarrollador Full-Stack, chef por hobbie y un apasionado por la biología y los gatos.
           </p>
@@ -60,15 +54,15 @@ const Home = () => {
       </div>
       {/* ABOUT SEE MORE */}
       <div >
-        <div className='flex flex-row w-full h-screen'>
-          <div data-aos="fade-left" data-aos-duration="700" className='w-1/2 h-full relative' >
+        <div className='flex flex-row w-full h-screen sm:flex-col-reverse'>
+          <div data-aos="fade-left" data-aos-duration="700" className='relative sm:w-full sm:h-50% w-1/2 h-full' >
             <Image alt='' src={'/img/misc/img1.jpg'} layout='fill' objectFit="cover" objectPosition="center" />
 
           </div>
-          <div data-aos="fade-top" data-aos-duration="700" className='flex flex-col justify-around w-1/2 h-full p-20 bg-dark text-light font-Fira-Code'>
+          <div data-aos="fade-top" data-aos-duration="700" className='flex flex-col justify-around w-1/2 h-full p-20 sm:w-full sm:h-50% bg-dark text-light font-Fira-Code'>
             <h3 className='text-5xl leading-tight font-Fira-Code '>{'{Experiencia Laboral}'}</h3>
             <ul className='flex flex-col text-lg leading-7'>
-              <li><ul className='flex flex-col px-5 font-Inter gap-3'>
+              <li><ul className='flex flex-col gap-3 px-5 font-Inter'>
                 {/* <li>{'{Empresa: "Mantra Consultores",'}</li>
                 <li>{'Cargo: "Desarrollador FullStack",'}</li>
                 <li className='leading-10'>{'Descripción: ["Desarrollo de aplicaciones móviles y web", "Implementación de servicios web y cloud", "Análisis de requerimientos", "Diseño y maquetación de interfaces de usuario"]},'}</li> */}
@@ -86,7 +80,7 @@ const Home = () => {
           <div className='w-1/2 h-full px-20 py-32 bg-medium'>
             
           </div>
-          <div className='w-1/2 h-full relative'>
+          <div className='relative w-1/2 h-full'>
           </div>
         </div> */}
       </div>
@@ -97,7 +91,7 @@ const Home = () => {
 
           <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
 
-            <h3 className='text-3xl drop-shadow-lg text-center'> {'0: "Tecnologías Frontend"'}</h3>
+            <h3 className='text-3xl text-center drop-shadow-lg'> {'0: "Tecnologías Frontend"'}</h3>
             <div className='flex flex-wrap justify-around gap-y-14 gap-x-20'>
               {
                 frontend.map(({ src, alt }) => (
@@ -107,7 +101,7 @@ const Home = () => {
             </div>
           </div>
           <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
-            <h3 className='text-3xl drop-shadow-lg text-center '>{'1: "Tecnologías Backend"'}</h3>
+            <h3 className='text-3xl text-center drop-shadow-lg '>{'1: "Tecnologías Backend"'}</h3>
             <div className='flex flex-wrap justify-around gap-y-14 gap-x-20'>
               {
                 backend.map(({ src, alt }) => (
@@ -117,7 +111,7 @@ const Home = () => {
             </div>
           </div>
           <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
-            <h3 className='text-3xl drop-shadow-lg text-center'>{'2: "Tecnologías Mobile"'}</h3>
+            <h3 className='text-3xl text-center drop-shadow-lg'>{'2: "Tecnologías Mobile"'}</h3>
             <div className='flex flex-wrap justify-around gap-y-14 gap-x-20'>
               {
                 mobile.map(({ src, alt }) => (
@@ -127,7 +121,7 @@ const Home = () => {
             </div>
           </div>
           <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
-            <h3 className='text-3xl drop-shadow-lg text-center '>{'3: "Bases de Datos"'}</h3>
+            <h3 className='text-3xl text-center drop-shadow-lg '>{'3: "Bases de Datos"'}</h3>
             <div className='flex flex-wrap justify-around gap-y-14 gap-x-20'>
               {
                 database.map(({ src, alt }) => (
@@ -137,7 +131,7 @@ const Home = () => {
             </div>
           </div>
           <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
-            <h3 className='text-3xl drop-shadow-lg text-center '>{'4: "Testing"'}</h3>
+            <h3 className='text-3xl text-center drop-shadow-lg '>{'4: "Testing"'}</h3>
             <div className='flex flex-wrap justify-around gap-y-14 gap-x-20'>
               {
                 testing.map(({ src, alt }) => (
@@ -147,7 +141,7 @@ const Home = () => {
             </div>
           </div>
           <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
-            <h3 className='text-3xl drop-shadow-lg text-center'>{'5: "Herramientas"'}</h3>
+            <h3 className='text-3xl text-center drop-shadow-lg'>{'5: "Herramientas"'}</h3>
             <div className='flex flex-wrap justify-around gap-y-14 gap-x-20'>
               {
                 tools.map(({ src, alt }) => (
