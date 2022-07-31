@@ -54,26 +54,26 @@ export default function Navbar(): JSX.Element {
           {
             route == "/" ? (
               <ul className="flex flex-col gap-16 items-center h-max pb-20 ">
-                <li>
+                <li onClick={() => setIsVisible(false)}>
                   <a href="#about">
                     Sobre mí
                   </a></li>
-                <li>
+                <li onClick={() => setIsVisible(false)}>
                   <a href="#skills">
                     Habilidades
                   </a>
                 </li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#contact">Contacto</a></li>
+                <li onClick={() => setIsVisible(false)}><a href="#projects">Proyectos</a></li>
+                <li onClick={() => setIsVisible(false)}><a href="#contact">Contacto</a></li>
                 <li>Idioma <select className="text-dark"><option value="es" onClick={() => router.push('/')}>Español</option><option value="en" onClick={() => router.push('/en')}>English</option></select></li>
               </ul>
             ) : (
               // en
               <ul className="flex flex-col gap-16 items-center h-max pb-20 ">
-                <li>About</li>
-                <li>Skills</li>
-                <li>Projects</li>
-                <li>Contact</li>
+                <li onClick={() => setIsVisible(false)}><a href="#about">About</a></li>
+                <li onClick={() => setIsVisible(false)}><a href="#skills">Skills</a></li>
+                <li onClick={() => setIsVisible(false)}><a href="#projects">Projects</a></li>
+                <li onClick={() => setIsVisible(false)}><a href="#contact">Contact</a></li>
                 <li>Language<select className="text-dark"><option value="en" onClick={() => router.push('/en')}>English</option><option value="es" onClick={() => router.push('/')}>Spanish</option></select></li>
               </ul>
             )
@@ -103,10 +103,10 @@ export default function Navbar(): JSX.Element {
           ) : (
             // en
             <ul className="flex flex-row gap-12 p-2 ">
-              <li>About</li>
-              <li>Skills</li>
-              <li>Projects</li>
-              <li>Contact</li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
               <li><select className="text-dark"><option value="en" onClick={() => router.push('/en')}>En</option><option value="es" onClick={() => router.push('/')}>Es</option></select></li>
             </ul>
           )
