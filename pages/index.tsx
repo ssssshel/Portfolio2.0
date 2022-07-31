@@ -41,7 +41,7 @@ const Home = () => {
           <h2 className='text-3xl font-Fira-Code text-medium drop-shadow-md'>{'type="Full-Stack Developer"/>'}</h2>
         </div>
 
-        <div className='flex items-center justify-center w-full h-20 font-medium bg-medium'>
+        <div className='flex items-center justify-center w-full h-12 font-medium bg-medium'>
           <p className='text-lg font-normal font-Fira-Code text-dark'>{'onClick={() => DescubreMás()}'}</p>
         </div>
       </div>
