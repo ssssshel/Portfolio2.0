@@ -7,8 +7,8 @@ export default function Footer() {
     <footer id="contact" className="bg-dark w-full h-screen text-light font-Fira-Code z-50 flex flex-col justify-between absolute ">
       <div>
       </div>
-      <div data-aos="fade-down" data-aos-duration="700" className="p-20 flex flex-col justify-around h-full">
-        <p className="text-5xl">¿Deseas contactarme?</p>
+      <div data-aos="fade-down" data-aos-duration="700" className="p-20 sm:px-10 sm:items-center sm:text-center sm:py-20 flex flex-col justify-around h-full">
+        <p className="text-5xl ">¿Deseas contactarme?</p>
         <p className=" font-Inter text-lg">Puedes encontrarme en Github, LinkedIn y StackOverflow:</p>
         <div >
           <ul className="flex text-4xl gap-20">
@@ -25,7 +25,7 @@ export default function Footer() {
         </div>
         <div><p className="font-Inter">O enviar un correo a:</p> <p className="font-semibold text-lg text-medium">angelarteaga989@gmail.com</p></div>
       </div>
-      <div className="bg-medium h-10 flex justify-end px-20 items-center font-medium text-dark"><p>{'</> with ❤️ by ssssshel'}</p></div>
+      <div className="bg-medium h-10 sm:justify-center flex justify-end px-20 items-center font-medium text-dark"><p>{'</> with ❤️ by ssssshel'}</p></div>
 
     </footer>
   )

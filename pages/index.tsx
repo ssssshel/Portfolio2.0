@@ -43,7 +43,7 @@ const Home = () => {
       <div id='about' className='flex flex-col justify-around w-full h-screen p-20 sm:px-10 bg-light'>
 
         <h2 data-aos="fade-down" data-aos-duration="700" className='text-5xl font-medium sm:text-4xl sm:text-center font-Fira-Code text-dark drop-shadow-lg'>{'{Sobre mí} '}</h2>
-        <div data-aos="fade-right" data-aos-duration="700" className='flex flex-col gap-5 pr-40 text-lg font-light leading-8 sm:px-0 text-dark' >
+        <div data-aos="fade-right" data-aos-duration="700" className='flex flex-col gap-5 pr-40 text-lg font-light leading-8 sm:leading-9 sm:px-0 text-dark' >
           <p>
             Hola! Soy Angel Arteaga, desarrollador Full-Stack, chef por hobbie y un apasionado por la biología y los gatos.
           </p>
@@ -59,17 +59,15 @@ const Home = () => {
             <Image alt='' src={'/img/misc/img1.jpg'} layout='fill' objectFit="cover" objectPosition="center" />
 
           </div>
-          <div data-aos="fade-top" data-aos-duration="700" className='flex flex-col justify-around w-1/2 h-full p-20 sm:w-full sm:h-50% bg-dark text-light font-Fira-Code'>
-            <h3 className='text-5xl leading-tight font-Fira-Code '>{'{Experiencia Laboral}'}</h3>
+          <div data-aos="fade-top" data-aos-duration="700" className='flex flex-col justify-around w-1/2 h-full p-20 sm:w-full sm:h-50% bg-dark text-light font-Fira-Code sm:p-10 '>
+            <h3 className='text-5xl sm:text-3xl leading-tight font-Fira-Code '>{'{Experiencia Laboral}'}</h3>
             <ul className='flex flex-col text-lg leading-7'>
-              <li><ul className='flex flex-col gap-3 px-5 font-Inter'>
-                {/* <li>{'{Empresa: "Mantra Consultores",'}</li>
-                <li>{'Cargo: "Desarrollador FullStack",'}</li>
-                <li className='leading-10'>{'Descripción: ["Desarrollo de aplicaciones móviles y web", "Implementación de servicios web y cloud", "Análisis de requerimientos", "Diseño y maquetación de interfaces de usuario"]},'}</li> */}
+              <li><ul className='flex flex-col gap-3 px-5 sm:px-0 font-Inter'>
+
                 <li className='text-3xl font-extralight' >Mantra Consultores</li>
                 <li className='font-bold'>Desarrollador Full-Stack</li>
                 <li>Jun 2022 - Actualmente</li>
-                <li className='text-xl font-light'>Desarrollé aplicaciones móviles y web, implementé servicios cloud, analicé y documenté requerimientos, diseñé y maqueté interfaces de usuario.</li>
+                <li className='text-xl font-light sm:text-lg'>Desarrollé aplicaciones móviles y web, implementé servicios cloud, analicé y documenté requerimientos, diseñé y maqueté interfaces de usuario.</li>
               </ul>
               </li>
 
@@ -85,14 +83,14 @@ const Home = () => {
         </div> */}
       </div>
       {/* SKILLS */}
-      <div id='skills' className='flex flex-col h-auto gap-24 px-20 py-32 bg-dark'>
-        <h2 data-aos="fade-right" data-aos-duration="700" className='text-5xl font-Fira-Code text-medium drop-shadow-lg'>{'{Habilidades}'}</h2>
-        <div className='flex flex-col pl-8 gap-36 font-Fira-Code text-light '>
+      <div id='skills' className='flex flex-col h-auto gap-24 px-20 sm:gap-16 sm:items-center py-32 sm:px-10 sm:py-28 bg-dark'>
+        <h2 data-aos="fade-right" data-aos-duration="700" className='text-5xl sm:text-4xl font-Fira-Code text-medium drop-shadow-lg'>{'{Habilidades}'}</h2>
+        <div className='flex flex-col pl-8 gap-36 sm:gap-24 sm:pl-0 font-Fira-Code text-light '>
 
           <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
 
-            <h3 className='text-3xl text-center drop-shadow-lg'> {'0: "Tecnologías Frontend"'}</h3>
-            <div className='flex flex-wrap justify-around gap-y-14 gap-x-20'>
+            <h3 className='text-3xl sm:text-2xl text-center drop-shadow-lg'> {'0: "Tecnologías Frontend"'}</h3>
+            <div className='flex flex-wrap justify-around gap-y-14 gap-x-20 sm:gap-x-10'>
               {
                 frontend.map(({ src, alt }) => (
                   <SkillItem key={src} src={src} alt={alt} />
@@ -101,7 +99,7 @@ const Home = () => {
             </div>
           </div>
           <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
-            <h3 className='text-3xl text-center drop-shadow-lg '>{'1: "Tecnologías Backend"'}</h3>
+            <h3 className='text-3xl sm:text-2xl text-center drop-shadow-lg '>{'1: "Tecnologías Backend"'}</h3>
             <div className='flex flex-wrap justify-around gap-y-14 gap-x-20'>
               {
                 backend.map(({ src, alt }) => (
@@ -111,7 +109,7 @@ const Home = () => {
             </div>
           </div>
           <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
-            <h3 className='text-3xl text-center drop-shadow-lg'>{'2: "Tecnologías Mobile"'}</h3>
+            <h3 className='text-3xl sm:text-2xl text-center drop-shadow-lg'>{'2: "Tecnologías Mobile"'}</h3>
             <div className='flex flex-wrap justify-around gap-y-14 gap-x-20'>
               {
                 mobile.map(({ src, alt }) => (
@@ -121,7 +119,7 @@ const Home = () => {
             </div>
           </div>
           <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
-            <h3 className='text-3xl text-center drop-shadow-lg '>{'3: "Bases de Datos"'}</h3>
+            <h3 className='text-3xl sm:text-2xl text-center drop-shadow-lg '>{'3: "Bases de Datos"'}</h3>
             <div className='flex flex-wrap justify-around gap-y-14 gap-x-20'>
               {
                 database.map(({ src, alt }) => (
@@ -131,7 +129,7 @@ const Home = () => {
             </div>
           </div>
           <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
-            <h3 className='text-3xl text-center drop-shadow-lg '>{'4: "Testing"'}</h3>
+            <h3 className='text-3xl sm:text-2xl text-center drop-shadow-lg '>{'4: "Testing"'}</h3>
             <div className='flex flex-wrap justify-around gap-y-14 gap-x-20'>
               {
                 testing.map(({ src, alt }) => (
@@ -141,7 +139,7 @@ const Home = () => {
             </div>
           </div>
           <div data-aos="fade-down" data-aos-duration="700" className='flex flex-col gap-16'>
-            <h3 className='text-3xl text-center drop-shadow-lg'>{'5: "Herramientas"'}</h3>
+            <h3 className='text-3xl sm:text-2xl text-center drop-shadow-lg'>{'5: "Herramientas"'}</h3>
             <div className='flex flex-wrap justify-around gap-y-14 gap-x-20'>
               {
                 tools.map(({ src, alt }) => (
@@ -154,9 +152,9 @@ const Home = () => {
         </div>
       </div>
       {/* PROJECTS */}
-      <div id='projects' className='flex flex-col gap-16 px-20 py-32 bg-independence'>
-        <h2 data-aos="fade-right" data-aos-duration="700" className='text-5xl font-Fira-Code text-light drop-shadow-lg'>{'{Proyectos}'}</h2>
-        <div data-aos="fade-down" data-aos-duration="700" className='grid grid-cols-3 gap-3'>
+      <div id='projects' className='flex flex-col gap-16 px-20 py-32 bg-independence sm:px-10 sm:py-20'>
+        <h2 data-aos="fade-right" data-aos-duration="700" className='text-5xl sm:text-4xl sm:text-center font-Fira-Code text-light drop-shadow-lg'>{'<Proyectos/>'}</h2>
+        <div data-aos="fade-down" data-aos-duration="700" className='grid sm:flex sm:flex-col sm:gap-6 grid-cols-3 gap-3'>
           {
             project.map(({ description, details, img, name, repo, tools, url, type }) => (
               <ProjectItem key={name} description={description} details={details} img={img} name={name} repo={repo} tools={tools} url={url} type={type} />
