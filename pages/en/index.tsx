@@ -1,6 +1,5 @@
 import HeadLayout from '../../components/HeadLayout'
 import Navbar from '../../components/Navbar'
-import Navbar2 from '../../components/Navbar2x'
 import Footer from '../../components/Footer'
 import SkillItem from '../../components/SkillItem'
 import skills from '../../data/skills'
