@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import HeadLayout from "../../../components/HeadLayout"
 import Navbar from "../../../components/Navbar"
-import Navbar2 from "../../../components/Navbar2x"
 import Footer from "../../../components/Footer"
 import Aos from 'aos'
 import 'aos/dist/aos.css'
