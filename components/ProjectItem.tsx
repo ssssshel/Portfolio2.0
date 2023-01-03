@@ -1,56 +1,76 @@
-import Image from "next/image"
-import { useRouter } from "next/router"
-import { useEffect, useRef, useState } from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import Image from "next/image";
+import { useRouter } from "next/router";
+import { FunctionComponent, useEffect, useRef, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { IProjectItemProps } from "../utils/interfaces/global";
 
-export default function ProjectItem({ name, description, tools, details, img, url, repo, type }: { name: string, description: string, tools: Array<string>, details: string, img: string, url: string, repo: string, type: string }): JSX.Element {
+const ProjectItem: FunctionComponent<IProjectItemProps> = (project) => {
+  const router = useRouter();
 
-  const router = useRouter()
+  const ref = useRef<HTMLDivElement>(null);
 
-  const ref = useRef<HTMLDivElement>(null)
-
-  const [showItem, setShowItem] = useState(false)
-
+  const [showItem, setShowItem] = useState(false);
 
   useEffect(() => {
     if (showItem) {
-      ref.current!.style.display = "flex"
+      ref.current!.style.display = "flex";
     } else {
-      ref.current!.style.display = "none"
+      ref.current!.style.display = "none";
     }
-  }, [showItem])
+  }, [showItem]);
 
   return (
-    <div onMouseOver={() => setShowItem(true)} onMouseLeave={() => setShowItem(false)} className='relative sm:h-40% h-60% w-full drop-shadow-lg'>
-      <Image alt={img} src={`/img/projects/${img}`} layout='fill' objectFit="cover" objectPosition="center" />
-      <div ref={ref} className='absolute hidden flex-col justify-center w-full h-full gap-4 p-10 bg-dark/70'>
-        <p className='text-3xl text-light'>{name}</p>
-        <p className='text-light'>{tools.join(" | ")}</p>
-        <p className='text-light text-sm'>{description}</p>
-        {
-          type == "web" ? (
-            <div className="flex justify-between gap-2">
-              <a href={url} target="_blank" rel="noopener noreferrer" className=" w-full">
-                <button className='bg-medium hover:bg-light py-1 w-full' ><p>Ver sitio</p></button>
-              </a>
-              <a href={repo} target="_blank" rel="noopener noreferrer" className=" w-full">
-                <button className='bg-medium hover:bg-light py-1 flex items-center justify-center gap-2 w-full' ><FontAwesomeIcon icon={faGithub} /><p>Repositorio</p></button>
-              </a>
-            </div>
-
+    <div
+      onMouseOver={() => setShowItem(true)}
+      onMouseLeave={() => setShowItem(false)}
+      className="relative  sm:h-40% h-60% w-full drop-shadow-lg"
+    >
+      <Image
+        alt={project.img}
+        src={`/img/projects/${project.img}`}
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center"
+        className="rounded-md"
+      />
+      <div
+        ref={ref}
+        className="absolute flex-col justify-center hidden w-full h-full gap-4 p-10 rounded-md bg-dark/70"
+      >
+        <p className="text-3xl text-light">{project.name}</p>
+        <p className="text-light">{project.tools.join(" | ")}</p>
+        <p className="text-sm text-light">{project.description}</p>
+        <div className="flex justify-between gap-2">
+          {project.type == "web" ? (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full "
+            >
+              <button className="w-full py-1 rounded-md bg-medium hover:bg-light">
+                <p>Ver sitio</p>
+              </button>
+            </a>
           ) : (
-            <div className="flex justify-between gap-2">
-              <a href={repo} target="_blank" rel="noopener noreferrer" className=" w-full">
-                <button className='bg-medium hover:bg-light py-1 flex items-center justify-center gap-2 w-full'  ><FontAwesomeIcon icon={faGithub} /><p>Ver repositorio</p></button>
-
-              </a>
-
-            </div>
-
-          )
-        }
+            <></>
+          )}
+          <a
+            href={project.repo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full "
+          >
+            <button className="flex items-center justify-center w-full gap-2 py-1 rounded-md bg-medium hover:bg-light">
+              <FontAwesomeIcon icon={faGithub} />
+              <p>Repositorio</p>
+            </button>
+          </a>
+        </div>
       </div>
     </div>
-  )
+  );
 }
+
+export default ProjectItem

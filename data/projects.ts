@@ -1,5 +1,7 @@
+import { IProjectItemProps } from "../utils/interfaces/global"
+
 export function projectsList() {
-  const project = [
+  const projects: Array<IProjectItemProps> = [
     {
       name: "Glorious",
       description: "Tienda virtual de prendas creadas por diseñadores peruanos, cuenta con panel de administración.",
@@ -75,18 +77,6 @@ export function projectsList() {
   ]
 
   return {
-    project
+    projects
   }
 }
-
-export interface ProjectData {
-  name: string,
-  description: string,
-  tools: string[],
-  details: string,
-  img: string,
-  url: string,
-  repo: string
-}
-
-export type Project = ProjectData
