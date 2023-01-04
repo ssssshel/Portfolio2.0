@@ -143,7 +143,7 @@ const skills: ISkills[] = [
   {
     index: 6,
     esName: "Cloud y Despliegues",
-    enName: "Cloud & Deploys",
+    enName: "Cloud & Deployments",
     content: [
       {
         src: "heroku.png",

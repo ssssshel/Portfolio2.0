@@ -1,0 +1,9 @@
+export { default as AboutContext } from './AboutContext';
+export { default as Footer } from './Footer';
+export { default as HeadLayout } from './HeadLayout';
+export { default as LaboralExperience } from './LaboralExperience';
+export { default as Navbar } from './Navbar';
+export { default as ProjectItem } from './ProjectItem';
+export { default as ProjectsSection } from './ProjectsSection';
+export { default as SkillItem } from './SkillItem';
+export { default as SkillsSection } from './SkillsSection';

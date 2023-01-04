@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { useRouter } from "next/router";
 import { FunctionComponent, useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { IProjectItemProps } from "../utils/interfaces/global";
+import { useLanguage } from "../utils/hooks/useLanguage";
 
 const ProjectItem: FunctionComponent<IProjectItemProps> = (project) => {
-  const router = useRouter();
+  const { language } = useLanguage()
 
   const ref = useRef<HTMLDivElement>(null);
 
@@ -40,9 +40,21 @@ const ProjectItem: FunctionComponent<IProjectItemProps> = (project) => {
       >
         <p className="text-3xl text-light">{project.name}</p>
         <p className="text-light">{project.tools.join(" | ")}</p>
-        <p className="text-sm text-light">{project.description}</p>
+        {
+          language === "es" ? (
+            <>
+              <p className="text-sm text-light">{project.esDescription}</p>
+              <p className="text-sm text-light">*{project.esDetails}</p>
+            </>
+          ) : (
+            <>
+              <p className="text-sm text-light">{project.enDescription}</p>
+              <p className="text-sm text-light">*{project.enDetails}</p>
+            </>
+          )
+        }
         <div className="flex justify-between gap-2">
-          {project.type == "web" ? (
+          {project.hasWebView ? (
             <a
               href={project.url}
               target="_blank"
@@ -50,7 +62,7 @@ const ProjectItem: FunctionComponent<IProjectItemProps> = (project) => {
               className="w-full "
             >
               <button className="w-full py-1 rounded-md bg-medium hover:bg-light">
-                <p>Ver sitio</p>
+                <p>{language === "es" ? "Ver sitio" : "Go to site"}</p>
               </button>
             </a>
           ) : (
@@ -64,7 +76,7 @@ const ProjectItem: FunctionComponent<IProjectItemProps> = (project) => {
           >
             <button className="flex items-center justify-center w-full gap-2 py-1 rounded-md bg-medium hover:bg-light">
               <FontAwesomeIcon icon={faGithub} />
-              <p>Repositorio</p>
+              <p>Repo</p>
             </button>
           </a>
         </div>

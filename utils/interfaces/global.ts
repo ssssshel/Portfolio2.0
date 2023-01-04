@@ -1,12 +1,14 @@
 export interface IProjectItemProps {
   name: string;
-  description: string;
+  esDescription: string;
+  enDescription: string;
   tools: Array<string>;
-  details: string;
+  esDetails: string;
+  enDetails: string;
   img: string;
   url: string;
   repo: string;
-  type: string;
+  hasWebView: boolean;
 }
 
 export interface ISkills {
