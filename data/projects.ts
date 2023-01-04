@@ -16,8 +16,8 @@ export function projectsList() {
     },
     {
       name: "Asterisks Microservices",
-      esDescription: "Microservicios de Asterisks, incluyen: Autenticación, Registros administrativos, Catalogo de productos, Carrito de compras, Gestion de ordenes, Info de usuarios, direcciones y más",
-      enDescription: "Asterisks microservices, includes: Authentication, Admin Records, Products index, Shopping cart, Orders Management, Users data, addresses and more",
+      esDescription: "Microservicios de Asterisks, incluyen: Autenticación, Registros administrativos, Catalogo de productos, Carrito de compras, Gestion de ordenes, usuarios y más",
+      enDescription: "Asterisks microservices, includes: Authentication, Admin Records, Products index, Shopping cart, Orders Management, users and more",
       tools: ["NodeJS", "Express", "Typescript", "Docker", "Railway", "Amazon RDS", "MongoDB"],
       esDetails: "",
       enDetails: "",

@@ -44,12 +44,19 @@ const ProjectItem: FunctionComponent<IProjectItemProps> = (project) => {
           language === "es" ? (
             <>
               <p className="text-sm text-light">{project.esDescription}</p>
-              <p className="text-sm text-light">*{project.esDetails}</p>
+              {
+                project.esDetails ?
+                  <p className="text-sm text-light">*{project.esDetails}</p> : <></>
+              }
             </>
           ) : (
             <>
               <p className="text-sm text-light">{project.enDescription}</p>
-              <p className="text-sm text-light">*{project.enDetails}</p>
+              {
+                project.enDetails ?
+                  <p className="text-sm text-light">*{project.enDetails}</p>
+                  : <></>
+              }
             </>
           )
         }

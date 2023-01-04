@@ -82,10 +82,10 @@ export default function Navbar(): JSX.Element {
             <li className="flex flex-col items-center gap-2">
               {language === "es" ? "Idioma" : "Language"}
               <select className="text-dark">
-                <option value="es" onClick={setSpanish}>
+                <option value="es" onSelect={setSpanish}>
                   Español
                 </option>
-                <option value="en" onClick={setEnglish}>
+                <option value="en" onSelect={setEnglish}>
                   English
                 </option>
               </select>
