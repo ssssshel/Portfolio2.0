@@ -44,9 +44,9 @@ const Home = () => {
         </div>
 
         <div className="flex items-center justify-center w-full h-12 font-medium bg-medium">
-          <p className="text-lg font-normal font-Fira-Code sm:text-base text-dark">
+          <a href="#about" className="text-lg font-normal cursor-pointer font-Fira-Code sm:text-base text-dark">
             {language == "es" ? "onClick={() => DescubreMás()}" : "onClick={() => DiscoverMore()}"}
-          </p>
+          </a>
         </div>
       </div>
       {/* ABOUT */}
