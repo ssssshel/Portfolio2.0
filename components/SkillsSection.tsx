@@ -8,16 +8,16 @@ const SkillsSectionComponent: FunctionComponent = () => {
   return (
     <div
       id="skills"
-      className="flex flex-col h-auto gap-24 p-20 sm:items-center sm:px-8 sm:py-16 sm:gap-12 bg-dark"
+      className="flex flex-col h-auto gap-24 p-20 sm:items-center sm:px-8 sm:py-16 sm:gap-12 bg-light"
     >
       <h2
         data-aos="fade-right"
         data-aos-duration="700"
-        className="text-5xl sm:text-4xl font-Fira-Code text-medium drop-shadow-lg"
+        className="text-5xl sm:text-4xl font-Fira-Code text-dark drop-shadow-lg"
       >
         {language === "es" ? "{Habilidades}" : "{Skills}"}
       </h2>
-      <div className="flex flex-col gap-36 sm:gap-16 sm:pl-0 font-Fira-Code text-light ">
+      <div className="flex flex-col gap-36 sm:gap-16 sm:pl-0 font-Fira-Code text-dark ">
 
         {
           skills.map((s) => (

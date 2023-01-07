@@ -39,10 +39,10 @@ export default function Navbar(): JSX.Element {
       {/* MOBILE */}
       <nav
         id="mobileNavbar"
-        className="fixed top-0 z-30 w-full h-20 px-20 lg:hidden sm:px-8 bg-dark/70 backdrop-blur-sm text-light "
+        className="fixed top-0 z-30 w-full h-20 px-20 lg:hidden sm:px-8 bg-gradient-to-b from-dark/70 backdrop-blur-sm text-light "
       >
         <div className="flex flex-row items-baseline justify-between h-20 pt-5">
-          <p className="text-3xl font-Inter sm:text-2xl font-extralight">
+          <p className="text-3xl font-Inter sm:text-xl font-extralight">
             {" "}
             <Link href={"/"}>
               <a>ssssshel</a>
@@ -90,7 +90,7 @@ export default function Navbar(): JSX.Element {
       </nav>
 
       {/* WEB */}
-      <nav className="fixed top-0 z-30 flex flex-row items-baseline justify-between w-full h-20 px-20 pt-4 sm:hidden md:hidden bg-dark/60 backdrop-blur-sm text-light ">
+      <nav className="fixed top-0 z-30 flex flex-row items-baseline justify-between w-full h-20 px-20 pt-4 bg-gradient-to-b from-dark/70 from sm:hidden md:hidden backdrop-blur-sm text-light ">
         <p className="text-3xl font-Inter font-extralight">
           {" "}
           <Link href={"/"}>

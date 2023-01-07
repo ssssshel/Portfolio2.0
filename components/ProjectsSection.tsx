@@ -10,12 +10,12 @@ const ProjectsSectionComponent: FunctionComponent = () => {
   return (
     <div
       id="projects"
-      className="flex flex-col gap-16 p-20 bg-independence sm:py-16 sm:px-8 sm:gap-12"
+      className="flex flex-col gap-16 p-20 bg-medium sm:py-16 sm:px-8 sm:gap-12"
     >
       <h2
         data-aos="fade-right"
         data-aos-duration="700"
-        className="text-5xl sm:text-4xl sm:text-center font-Fira-Code text-light drop-shadow-lg"
+        className="text-5xl sm:text-4xl sm:text-center font-Fira-Code text-dark drop-shadow-lg"
       >
         {language === "es" ? "{Proyectos}" : "{Projects}"}
       </h2>
