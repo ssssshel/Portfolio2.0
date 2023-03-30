@@ -7,6 +7,18 @@ const skills: ISkills[] = [
     enName: "Frontend Technologies",
     content: [
       {
+        src: "nglogo.png",
+        alt: "Angular"
+      },
+      {
+        src: "React-icon.png",
+        alt: "React"
+      },
+      {
+        src: "Nextjs.png",
+        alt: "NextJS"
+      },
+      {
         src: "html.png",
         alt: "HTML"
       },
@@ -21,18 +33,6 @@ const skills: ISkills[] = [
       {
         src: "sass.png",
         alt: "Sass"
-      },
-      {
-        src: "nglogo.png",
-        alt: "Angular"
-      },
-      {
-        src: "React-icon.png",
-        alt: "React"
-      },
-      {
-        src: "Nextjs.png",
-        alt: "NextJS"
       }
     ]
   },
@@ -56,6 +56,10 @@ const skills: ISkills[] = [
       {
         src: "fiber.png",
         alt: "Fiber"
+      },
+      {
+        src: "deno.png",
+        alt: "Deno"
       }
     ]
   },
