@@ -1,9 +1,11 @@
 import Image from "next/image";
 import { FunctionComponent } from "react";
 import { useLanguage } from "../utils/hooks/useLanguage";
+import { laboralExpList } from "../data/laboral";
 
 const LaboralExperienceComponent: FunctionComponent = () => {
   const { language } = useLanguage();
+  const laboralExps = laboralExpList()
 
   return (
     <div className="flex flex-row w-full h-auto min-h-screen sm:flex-col-reverse">
@@ -29,63 +31,24 @@ const LaboralExperienceComponent: FunctionComponent = () => {
           {language === "es" ? "{Experiencia Laboral}" : "{Laboral Experience}"}
         </h3>
         <div className="flex flex-col gap-12 text-lg leading-7">
-          {language === "es" ? (
-            <>
-              <ul className="flex flex-col gap-3 px-5 sm:px-0 font-Inter">
-                <li className="text-3xl sm:text-2xl font-extralight">
-                  NTT DATA
-                </li>
-                <li className="font-bold">Junior Engineer</li>
-                <li>Ago 2022 - Actualmente</li>
-                <li className="text-xl font-light sm:text-base">
-                  Desarrollo y mantenimiento de funcionalidades a nivel Frontend
-                  del aplicativo móvil &quot;Mi movistar&quot; del cliente
-                  Telefónica, integración con microservicios, soporte a
-                  incidencias y errores en el desarrollo.
-                </li>
-              </ul>
-              <ul className="flex flex-col gap-3 px-5 sm:px-0 font-Inter">
-                <li className="text-3xl sm:text-2xl font-extralight">
-                  Mantra Consultores
-                </li>
-                <li className="font-bold">Desarrollador Full-Stack</li>
-                <li>Jun 2022 - Jul 2022</li>
-                <li className="text-xl font-light sm:text-base">
-                  Desarrollé aplicaciones móviles y web, implementé servicios
-                  cloud, analicé y documenté requerimientos, diseñé y maqueté
-                  interfaces de usuario.
-                </li>
-              </ul>
-            </>
-          ) : (
-            <>
-              <ul className="flex flex-col gap-3 px-5 sm:px-0 font-Inter">
-                <li className="text-3xl sm:text-2xl font-extralight">
-                  NTT DATA
-                </li>
-                <li className="font-bold">Junior Engineer</li>
-                <li>Ago 2022 - Currently</li>
-                <li className="text-xl font-light sm:text-base">
-                  Development and maintenance of functionalities at frontend
-                  level of the mobile application &quot;Mi movistar&quot; for
-                  Telefónica client, microservices and
-                  API&apos;s integration, support for incidents and errors in development.
-                </li>
-              </ul>
-              <ul className="flex flex-col gap-3 px-5 sm:px-0 font-Inter">
-                <li className="text-3xl sm:text-2xl font-extralight">
-                  Mantra Consultores
-                </li>
-                <li className="font-bold">Full-stack developer</li>
-                <li>Jun 2022 - Jul 2022</li>
-                <li className="text-xl font-light sm:text-base">
-                  Hybrid applications development with Ionic/Angular, cloud
-                  services implementation, requirements analysis and
-                  documentation, UI design and layout.
-                </li>
-              </ul>
-            </>
-          )}
+          {
+            laboralExps.map(({ enterprise, en, es }) => (
+              <>
+                <ul className="flex flex-col gap-3 px-5 sm:px-0 font-Inter">
+                  <li className="text-3xl sm:text-2xl font-extralight">
+                    {enterprise}
+                  </li>
+                  <li className="font-bold">{language === 'es' ? es.title : en.title} </li>
+                  <li>{language === 'es' ? es.period : en.period} </li>
+                  <li className="text-xl font-light sm:text-base">
+                    {
+                      language === 'es' ? es.description : en.description
+                    }
+                  </li>
+                </ul>
+              </>
+            ))
+          }
         </div>
       </div>
     </div>

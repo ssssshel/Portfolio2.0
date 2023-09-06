@@ -61,7 +61,7 @@ const ProjectItem: FunctionComponent<IProjectItemProps> = (project) => {
           )
         }
         <div className="flex justify-between gap-2">
-          {project.hasWebView ? (
+          {project.url ? (
             <a
               href={project.url}
               target="_blank"
@@ -75,17 +75,23 @@ const ProjectItem: FunctionComponent<IProjectItemProps> = (project) => {
           ) : (
             <></>
           )}
-          <a
-            href={project.repo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full "
-          >
-            <button className="flex items-center justify-center w-full gap-2 py-1 rounded-md bg-medium hover:bg-light">
-              <FontAwesomeIcon icon={faGithub} />
-              <p>Repo</p>
-            </button>
-          </a>
+
+          {
+            project.repo ? (
+              <a
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full "
+              >
+                <button className="flex items-center justify-center w-full gap-2 py-1 rounded-md bg-medium hover:bg-light">
+                  <FontAwesomeIcon icon={faGithub} />
+                  <p>Repo</p>
+                </button>
+              </a>
+
+            ) : <></>
+          }
         </div>
       </div>
     </div>

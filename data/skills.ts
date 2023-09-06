@@ -50,6 +50,10 @@ const skills: ISkills[] = [
         alt: "Express"
       },
       {
+        src: "nest.jpeg",
+        alt: "Nest JS"
+      },
+      {
         src: "go.png",
         alt: "Go"
       },
@@ -99,6 +103,10 @@ const skills: ISkills[] = [
         src: "mysql.png",
         alt: "MySQL"
       },
+      {
+        src: "redis.png",
+        alt: "Redis"
+      }
     ]
   },
   {
@@ -133,21 +141,28 @@ const skills: ISkills[] = [
         src: "git.png",
         alt: "Git"
       },
-
       {
         src: "Typescript_logo_2020.svg.png",
         alt: "Typescript"
       },
       {
+        src: "linux.png",
+        alt: "Linux"
+      },
+      {
         src: "docker.png",
         alt: "Docker"
+      },
+      {
+        src: "rabbitmq.png",
+        alt: "RabbitMQ"
       }
     ]
   },
   {
     index: 6,
-    esName: "Cloud y Despliegues",
-    enName: "Cloud & Deployments",
+    esName: "Cloud",
+    enName: "Cloud",
     content: [
       {
         src: "heroku.png",
@@ -161,10 +176,10 @@ const skills: ISkills[] = [
         src: "firebase.png",
         alt: "Firebase"
       },
-      {
-        src: "gcp.png",
-        alt: "GCP"
-      },
+      // {
+      //   src: "gcp.png",
+      //   alt: "GCP"
+      // },
       {
         src: "aws.png",
         alt: "AWS"
